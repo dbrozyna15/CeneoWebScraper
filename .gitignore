@@ -128,5 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-#VSC environment
+# VSC environment
 .vscode
+
+# produkty
+app/products

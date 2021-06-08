@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!-- Datatables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
@@ -17,7 +18,7 @@
         <header class="d-flex justify-content-center">
           <ul class="nav nav-pills text-light">
             <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link text-light">Strona główna</a></li>
-            <li class="nav-item"><a href="{{ url_for('extract', product_id=39562616) }}" class="nav-link text-light">Ekstrakcja opinii</a></li>
+            <li class="nav-item"><a href="{{ url_for('extract') }}" class="nav-link text-light">Ekstrakcja opinii</a></li>
             <li class="nav-item"><a href="{{ url_for('products') }}" class="nav-link text-light">Lista produktów</a></li>
             <li class="nav-item"><a href="{{ url_for('author') }}" class="nav-link text-light">O autorze</a></li>
           </ul>
@@ -25,12 +26,12 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-3">
+            {# <div class="col-3">
             {% block right %}
             
             {% endblock right %}
-            </div>
-            <div class="col-9">
+            </div> #}
+            <div class="col">
             {% block middle %}
                 <h2>To jest plik layout </h2>
             {% endblock middle %}
@@ -40,8 +41,13 @@
     <footer class="container d-flex bg-info text-light align-items-center" style="height: 40px;">
         <p style="margin: auto;">Dominik Brożyna</p>
     </footer>
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- jQuery & Datatables -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
+    {% block scripts %}
+    
+    {% endblock scripts %}
   </body>
 </html>
